@@ -1,285 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Mumtahin Habib Ullah Mazumder</title>
-    <style>
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Mumtahin Habib Ullah Mazumder | University of Utah</title>
+  <meta name="description" content="Md Mumtahin Habib Ullah Mazumder is a Ph.D. student in Computer Science at the University of Utah working on machine learning and algorithms for wireless networks: spectrum sharing, transmitter localization, and Open RAN scheduling.">
+  <meta name="author" content="Md Mumtahin Habib Ullah Mazumder">
+  <meta property="og:title" content="Md Mumtahin Habib Ullah Mazumder">
+  <meta property="og:description" content="Ph.D. candidate, University of Utah. Machine learning and algorithms for wireless networks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mumtahinhabib.github.io/">
+  <meta property="og:image" content="https://mumtahinhabib.github.io/images/final_img.jpeg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23b4232c'/><text x='50%25' y='56%25' font-family='Georgia,serif' font-size='30' fill='white' text-anchor='middle' dominant-baseline='middle'>MM</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md Mumtahin Habib Ullah Mazumder",
+    "jobTitle": "Ph.D. Student in Computer Science",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Utah"},
+    "email": "mailto:mumtahin.mazumder@utah.edu",
+    "url": "https://mumtahinhabib.github.io/",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=7TyzUBQAAAAJ&hl=en",
+      "https://github.com/mhrafi66",
+      "https://www.linkedin.com/in/md-mumtahin-habib-ullah-mazumder-80b07315a/",
+      "https://orcid.org/0000-0003-3617-2624"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --surface: #ffffff;
+      --text: #1f2328;
+      --muted: #5b6370;
+      --line: #e6e2dc;
+      --accent: #b4232c;          /* Utah red */
+      --accent-soft: #fbeceb;
+      --link: #9c1d25;
+      --chip: #f2efea;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14161a;
+        --surface: #1b1e23;
+        --text: #e7e9ec;
+        --muted: #a2a9b4;
+        --line: #2b3038;
+        --accent: #e5575e;
+        --accent-soft: #2a1d1f;
+        --link: #f08a8f;
+        --chip: #252a31;
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: var(--sans); font-size: 16px; line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-        nav {
-            background-color: #f8f8f8;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-        }
+    /* top nav */
+    .topnav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: saturate(1.4) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topnav .inner {
+      max-width: 1120px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--text); white-space: nowrap; }
+    .brand:hover { text-decoration: none; }
+    .navlinks { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
+    .navlinks::-webkit-scrollbar { display: none; }
+    .navlinks a { color: var(--muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .navlinks a:hover { color: var(--accent); text-decoration: none; }
 
-        nav a {
-            margin-right: 20px;
-            text-decoration: none;
-            color: #0056b3;
-            font-weight: bold;
-        }
+    /* layout */
+    .wrap {
+      max-width: 1120px; margin: 0 auto; padding: 40px 24px 64px;
+      display: grid; grid-template-columns: 290px 1fr; gap: 56px;
+    }
+    aside { position: sticky; top: 96px; align-self: start; }
+    .photo {
+      width: 168px; height: 168px; border-radius: 50%; object-fit: cover;
+      border: 4px solid var(--surface); box-shadow: 0 0 0 1px var(--line), var(--shadow);
+    }
+    aside h1 { font-family: var(--serif); font-size: 26px; line-height: 1.25; margin: 20px 0 6px; font-weight: 600; }
+    .role { color: var(--muted); font-size: 15px; margin: 0 0 18px; }
+    .role strong { color: var(--text); font-weight: 600; }
+    .links { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 8px; }
+    .links a { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-size: 14.5px; }
+    .links a:hover { color: var(--accent); text-decoration: none; }
+    .links svg { width: 17px; height: 17px; flex: none; fill: currentColor; opacity: .85; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff; padding: 9px 16px; border-radius: 8px;
+      font-weight: 600; font-size: 14px;
+    }
+    .btn:hover { filter: brightness(1.08); text-decoration: none; }
 
-        header {
-            padding: 50px 20px;
-            background-color: #f1f1f1;
-            text-align: center;
-        }
+    main section { padding-top: 8px; margin-bottom: 52px; }
+    h2 {
+      font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 0 0 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    p { margin: 0 0 14px; }
+    .lead { font-size: 17px; }
+    .muted { color: var(--muted); }
+    .callout {
+      background: var(--accent-soft); border-left: 3px solid var(--accent);
+      padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 15px; margin-top: 18px;
+    }
+    .interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .chip { background: var(--chip); color: var(--text); font-size: 13px; padding: 4px 11px; border-radius: 999px; }
 
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
+    /* news */
+    .news { list-style: none; padding: 0; margin: 0; }
+    .news li { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
+    .news li:last-child { border-bottom: 0; }
+    .news time { color: var(--accent); font-weight: 600; font-size: 13.5px; padding-top: 1px; }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-        }
+    /* research cards */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+      padding: 18px 20px; box-shadow: var(--shadow);
+    }
+    .card h3 { font-size: 16px; margin: 0 0 6px; line-height: 1.4; }
+    .card p { font-size: 14.5px; color: var(--muted); margin: 0 0 10px; }
+    .card .meta { font-size: 13px; }
+    .tag { display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
 
-        header p {
-            font-size: 1.1em;
-            color: #555;
-        }
+    /* publications */
+    .pubs { list-style: none; padding: 0; margin: 0; }
+    .pub { display: grid; grid-template-columns: 112px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .pub:last-child { border-bottom: 0; }
+    .venue {
+      align-self: start; text-align: center; font-size: 12px; font-weight: 700;
+      background: var(--chip); border-radius: 6px; padding: 6px 4px; line-height: 1.3;
+    }
+    .venue.hl { background: var(--accent); color: #fff; }
+    .pub .title { font-weight: 600; font-size: 15.5px; line-height: 1.45; }
+    .pub .authors { font-size: 14.5px; color: var(--muted); margin: 3px 0; }
+    .pub .authors b { color: var(--text); font-weight: 600; }
+    .pub .where { font-size: 14px; font-style: italic; }
+    .pub .actions { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .pub .actions a {
+      font-size: 12.5px; font-weight: 600; border: 1px solid var(--line); border-radius: 6px;
+      padding: 2px 9px; color: var(--text);
+    }
+    .pub .actions a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+    .badge { font-size: 11.5px; font-weight: 600; color: var(--accent); margin-left: 6px; font-style: normal; }
 
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+    /* timeline */
+    .timeline { list-style: none; padding: 0; margin: 0; position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+    .timeline li { position: relative; padding: 0 0 22px 30px; }
+    .timeline li::before {
+      content: ""; position: absolute; left: 0; top: 7px; width: 12px; height: 12px; border-radius: 50%;
+      background: var(--surface); border: 2px solid var(--accent);
+    }
+    .tl-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .tl-head strong { font-size: 15.5px; }
+    .tl-head span { color: var(--muted); font-size: 13.5px; white-space: nowrap; }
+    .tl-org { color: var(--muted); font-size: 14.5px; }
+    .timeline p { font-size: 14.5px; margin: 4px 0 0; }
 
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-            margin-top: 40px;
-        }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    ul.plain { margin: 0; padding-left: 18px; font-size: 15px; }
+    ul.plain li { margin-bottom: 6px; }
 
-        ul {
-            padding-left: 20px;
-        }
+    footer { border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; padding: 24px; }
 
-        .publication, .work, .research {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #777;
-            border-top: 1px solid #ddd;
-        }
-    </style>
+    @media (max-width: 900px) {
+      .wrap { grid-template-columns: 1fr; gap: 32px; padding-top: 28px; }
+      aside { position: static; text-align: center; }
+      .links { justify-content: center; grid-template-columns: repeat(2, auto); column-gap: 22px; }
+      .photo { width: 140px; height: 140px; }
+    }
+    @media (max-width: 640px) {
+      .navlinks { display: none; }
+      .grid, .two { grid-template-columns: 1fr; }
+      .pub { grid-template-columns: 1fr; gap: 8px; }
+      .venue { justify-self: start; padding: 4px 10px; }
+      .news li { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
 </head>
 
 <body>
-
-    <nav>
+  <nav class="topnav" aria-label="Main">
+    <div class="inner">
+      <a class="brand" href="#top">Mumtahin Mazumder</a>
+      <div class="navlinks">
         <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#publications">Research Publications</a>
-        <a href="#work">Work Experience</a>
-        <a href="#research">Research Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <a href="#news">News</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#software">Datasets &amp; Code</a>
+        <a href="#experience">Experience</a>
+        <a href="#service">Service</a>
+      </div>
+    </div>
+  </nav>
 
-    <header>
-        <img src="images/final_img.jpeg" alt="Md. Mumtahin Habib Ullah Mazumder">
-        <h1>Md Mumtahin Habib Ullah Mazumder</h1>
-        <p>PhD Student, Kahlert School of Computing, University of Utah</p>
-    </header>
+  <div class="wrap" id="top">
+    <!-- ============ SIDEBAR ============ -->
+    <aside>
+      <img class="photo" src="images/final_img.jpeg" alt="Photo of Md Mumtahin Habib Ullah Mazumder">
+      <h1>Md Mumtahin Habib Ullah Mazumder</h1>
+      <p class="role"><strong>Ph.D. Candidate</strong>, Computer Science<br>Kahlert School of Computing<br>University of Utah</p>
+      <ul class="links">
+        <li><a href="mailto:mumtahin.mazumder@utah.edu">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=7TyzUBQAAAAJ&amp;hl=en">
+          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.92A8.96 8.96 0 0 1 12 9c2.9 0 5.48 1.37 7.16 3.42L24 9.5 12 0z"/></svg>Google Scholar</a></li>
+        <li><a href="https://github.com/mhrafi66">
+          <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.98 10.98 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/md-mumtahin-habib-ullah-mazumder-80b07315a/">
+          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
+        <li><a href="https://orcid.org/0000-0003-3617-2624">
+          <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM8.1 18.1H6.6V7.5h1.5v10.6zM7.3 6.4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10.9 6.4c0 3-2.1 5.3-5.6 5.3H9.8V7.5h2.9c3.4 0 5.5 2.3 5.5 5.3zm-1.6 0c0-2.1-1.3-3.9-4.1-3.9h-1.2v7.8h1.2c2.8 0 4.1-1.9 4.1-3.9z"/></svg>ORCID</a></li>
+        <li><a href="https://www.researchgate.net/profile/Md-Mumtahin-Habib-Ullah-Mazumder">
+          <svg viewBox="0 0 24 24"><path d="M19.6 0H4.4A4.4 4.4 0 0 0 0 4.4v15.2A4.4 4.4 0 0 0 4.4 24h15.2a4.4 4.4 0 0 0 4.4-4.4V4.4A4.4 4.4 0 0 0 19.6 0zM9.9 18.3c-.4.1-1.3.1-1.9-.2-.6-.4-1-1-1.6-2.1-.4-.7-.9-1.6-1.4-2.2-.3-.4-.6-.6-1-.6v4.3c0 .5.2.6.9.6h.3v.4H.8v-.4c.8 0 1-.1 1-.6V7.8c0-.5-.2-.6-1-.6v-.4h3.4c1.8 0 3.6.6 3.6 2.6 0 1.4-1 2.3-2.3 2.7.6.5 1.2 1.4 1.8 2.3.9 1.4 1.6 2.5 2.6 2.9v1zm-4.7-6.6c1.3 0 1.9-.9 1.9-2.3 0-1.5-.7-2.3-2-2.3-.4 0-.6 0-.7.1v4.5h.8zm13.4-1.1c-.9 0-1.6-.5-2-1.3-.2-.5-.3-1.2-.3-2 0-1.8.7-3.3 2.4-3.3 1 0 1.6.4 1.8.5l-.1.9-.2.1c-.4-.4-.9-.7-1.5-.7-1 0-1.4 1-1.4 2.4 0 1.5.5 2.7 1.5 2.7.4 0 .6-.1.8-.2V7.5h-1v-.6h2.3v.6h-.4v2.3c-.5.4-1.2.8-1.9.8z"/></svg>ResearchGate</a></li>
+      </ul>
+      <a class="btn" href="cv.pdf">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>Download CV</a>
+    </aside>
 
+    <!-- ============ MAIN ============ -->
+    <main>
       <section id="about">
-        <h2>About Me</h2>
-        <p>I am a third-year Computer Science Ph.D. Student at the University of Utah and currently I am working as a Research Assistant at the Kahlert School of Computing. I have completed my bachelor's degree from the Department of Computer Science and Engineering at the Islamic University of Technology (IUT), Gazipur, Bangladesh.</p>
-    </section>
+        <h2>About</h2>
+        <p class="lead">I am a Ph.D. candidate in Computer Science at the <a href="https://www.cs.utah.edu/">Kahlert School of Computing, University of Utah</a>, advised by <a href="https://www.cs.utah.edu/~bhaskara/">Prof. Aditya Bhaskara</a>.</p>
+        <p>My research is on <strong>machine learning and algorithms for wireless networks</strong>. Radio spectrum is limited, and more and more users have to share it, including sensitive receivers such as radio telescopes that must not be disturbed. I build methods that make this sharing efficient, reliable, and secure: physics-informed models that locate transmitters from sparse measurements, reinforcement-learning schedulers for Open RAN cellular networks, and optimization algorithms with provable guarantees that admit more users without breaking protection limits.</p>
+        <p>I like working across theory and systems. I prove guarantees for my algorithms and also test them on real data from the <a href="https://powderwireless.net/">POWDER</a> wireless testbed. My work is supported by the U.S. National Science Foundation through the POWDER-ENS and National Radio Dynamic Zones (NRDZ) programs.</p>
+        <p>Before Utah, I was a full-time Lecturer in Computer Science and Engineering at United International University, Dhaka. I received my B.Sc. in Computer Science and Engineering from the Islamic University of Technology (IUT).</p>
+        <div class="interests">
+          <span class="chip">Wireless spectrum sharing</span>
+          <span class="chip">Physics-informed ML</span>
+          <span class="chip">Reinforcement learning</span>
+          <span class="chip">Open RAN</span>
+          <span class="chip">Transmitter localization</span>
+          <span class="chip">Approximation &amp; online algorithms</span>
+          <span class="chip">Stochastic optimization</span>
+        </div>
+        <!-- Delete this callout if you are not looking for internships -->
+        <p class="callout">I am open to <strong>research internship</strong> opportunities in wireless ML, networking, and optimization for Summer 2027. Feel free to <a href="mailto:mumtahin.mazumder@utah.edu">reach out</a>.</p>
+      </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div>
-            <h3>PhD in Computer Science</h3>
-            <p>University of Utah (Aug 2023 - Present)</p>
-            <ul>
-                <li>Research Area: Theory of Computer Science and Machine Learning</li>
-                <li>Supervisor: Aditya Bhaskara</li>
-                <li>Relevant Coursework: NLP with Deep Learning, Decomposition Method, Machine Learning, Approximation Algorithms, High-Dimensional Data Analysis, Theory of Machine Learning, Graph Theory, Advanced Networks</li>
+      <section id="news">
+        <h2>News</h2>
+        <ul class="news">
+          <li><time>Nov 2026</time><span>Our paper <em>Optimizing Probabilistic Propagation in Graphs by Adding Edges</em> was accepted at <strong>ITCS 2027</strong>.</span></li>
+          <li><time>2026</time><span>New paper on spectrum sharing with stochastic feasibility feedback submitted to <strong>ACM SIGMETRICS 2027</strong>. <a href="local-search-subset-selection.pdf">Preprint</a></span></li>
+          <li><time>2026</time><span>Our CoNEXT 2025 paper was named in the <em>IEEE Network</em> conference report on ACM CoNEXT 2025.</span></li>
+          <li><time>Apr 2026</time><span>Released the <a href="https://doi.org/10.5281/zenodo.19445683">Augmented Outdoor RSS Dataset</a> for single- and two-transmitter localization on Zenodo.</span></li>
+          <li><time>Apr 2026</time><span>Received my M.S. in Computer Science from the University of Utah.</span></li>
+          <li><time>Dec 2025</time><span>Presented <em>PhARMNet</em> at <strong>ACM CoNEXT 2025</strong>.</span></li>
+          <li><time>2025</time><span>Served on the Shadow Program Committee of <strong>ACM SIGMETRICS 2026</strong> and reviewed for <strong>SODA 2026</strong>.</span></li>
+        </ul>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <div class="grid">
+          <div class="card">
+            <span class="tag">Ongoing</span>
+            <h3>Spectrum sharing with provable protection</h3>
+            <p>Deciding which transmitters can share spectrum near a protected receiver, such as a radio observatory, when the only feedback is whether its interference limit was met. I design local-search algorithms with guarantees on both utilization and protection, motivated by NSF's National Radio Dynamic Zones.</p>
+            <div class="meta muted">With Aditya Bhaskara and Sneha Kumar Kasera · Under review at SIGMETRICS 2027</div>
+          </div>
+          <div class="card">
+            <span class="tag">Ongoing</span>
+            <h3>Reinforcement learning for Open RAN scheduling</h3>
+            <p>RL schedulers that group users for MU-MIMO so several users share the same radio resources, protect underserved users, deliver packets on time, and stay robust to stale channel reports. I built a Sionna-based multi-cell 5G simulator for this, with training planned on the POWDER testbed.</p>
+            <div class="meta"><a href="https://github.com/mhrafi66/oran-deep-scheduler">Code on GitHub</a> <span class="muted">· With the Flux Research Group</span></div>
+          </div>
+          <div class="card">
+            <span class="tag">ACM CoNEXT 2025</span>
+            <h3>Physics-informed transmitter localization</h3>
+            <p>PhARMNet combines terrain-aware propagation modeling with neural RSS prediction to generate realistic synthetic measurements, improving localization where field data is sparse. I led the project from design to publication and released the augmented dataset.</p>
+            <div class="meta"><a href="https://dl.acm.org/doi/10.1145/3768995">Paper</a> · <a href="https://doi.org/10.5281/zenodo.19445683">Dataset</a></div>
+          </div>
+          <div class="card">
+            <span class="tag">ITCS 2027</span>
+            <h3>Optimizing propagation in probabilistic networks</h3>
+            <p>Adding a few edges to a network so that information reaches every node with high probability. I designed the ball-packing algorithm behind our main approximation result; an independent group has since used it as a benchmark.</p>
+            <div class="meta"><a href="https://arxiv.org/abs/2407.02624">arXiv</a> <span class="muted">· With Blair D. Sullivan's group</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <ul class="pubs">
+          <li class="pub">
+            <div class="venue">SIGMETRICS<br>2027</div>
+            <div>
+              <div class="title">Local Search for Subset Selection with Stochastic Feasibility Feedback<sup>*</sup></div>
+              <div class="authors">A. Bhaskara, S. K. Kasera, <b>M. M. H. U. Mazumder</b></div>
+              <div class="where">Under review, ACM SIGMETRICS 2027</div>
+              <div class="actions"><a href="local-search-subset-selection.pdf">PDF</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue hl">ITCS<br>2027</div>
+            <div>
+              <div class="title">Optimizing Probabilistic Propagation in Graphs by Adding Edges<sup>*</sup></div>
+              <div class="authors">A. Bhaskara, A. Crane, S. Jain, <b>M. M. H. U. Mazumder</b>, B. D. Sullivan, P. Yalamanchili</div>
+              <div class="where">Innovations in Theoretical Computer Science (ITCS 2027), LIPIcs <span class="badge">Accepted</span></div>
+              <div class="actions"><a href="https://arxiv.org/abs/2407.02624">arXiv</a><a href="https://arxiv.org/pdf/2407.02624">PDF</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue hl">CoNEXT<br>2025</div>
+            <div>
+              <div class="title">Bridging Data Gaps: Enhancing Wireless Localization with Physics-Informed Data Augmentation</div>
+              <div class="authors"><b>M. M. H. U. Mazumder</b>, F. B. Mitchell, A. Bhaskara, S. K. Kasera, N. Patwari</div>
+              <div class="where">Proceedings of the ACM on Networking (ACM CoNEXT 2025)</div>
+              <div class="actions"><a href="https://dl.acm.org/doi/10.1145/3768995">Paper</a><a href="https://drive.google.com/file/d/1lw9uc-YGFi6kIm7XWBDfSIx0GgVnENpS/view?usp=sharing">PDF</a><a href="https://doi.org/10.5281/zenodo.19445683">Dataset</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue">Annals of<br>Data Sci.</div>
+            <div>
+              <div class="title">An Evidential Dynamic Neighborhood Approach to Learn from Imbalanced Data</div>
+              <div class="authors">M. E. Kadir, <b>M. M. H. U. Mazumder</b>, M. M. Alam, M. Shoyaib</div>
+              <div class="where">Annals of Data Science, Springer, 2026</div>
+              <div class="actions"><a href="https://link.springer.com/article/10.1007/s40745-026-00709-0">Paper</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue">IJIS<br>2023</div>
+            <div>
+              <div class="title">cFEM: A Cluster based Feature Extraction Method for Network Intrusion Detection</div>
+              <div class="authors"><b>M. M. H. U. Mazumder</b>, M. E. Kadir, S. Sharmin, M. S. Islam, M. M. Alam</div>
+              <div class="where">International Journal of Information Security, Springer, 2023</div>
+              <div class="actions"><a href="https://link.springer.com/article/10.1007/s10207-023-00694-y">Paper</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue">Data in<br>Brief 2023</div>
+            <div>
+              <div class="title">BdSL47: A Complete Depth-based Bangla Sign Alphabet and Digit Dataset</div>
+              <div class="authors">S M Rayeed, S. T. Tuba, H. Mahmud, <b>M. M. H. U. Mazumder</b>, M. S. H. Mukta, M. K. Hasan</div>
+              <div class="where">Data in Brief, Elsevier, vol. 51, 2023</div>
+              <div class="actions"><a href="https://doi.org/10.1016/j.dib.2023.109799">Paper</a><a href="https://doi.org/10.17632/pbb3w3f92y.3">Dataset</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue">IEEE CCNC<br>2022</div>
+            <div>
+              <div class="title">RHC: Cluster based Feature Reduction for Network Intrusion Detections</div>
+              <div class="authors">M. H. Tarek, <b>M. M. H. U. Mazumder</b>, S. Sharmin, M. S. Islam, M. Shoyaib, M. M. Alam</div>
+              <div class="where">IEEE Consumer Communications &amp; Networking Conference (CCNC), 2022</div>
+              <div class="actions"><a href="https://ieeexplore.ieee.org/document/9700680">Paper</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="venue">IEEE ICREST<br>2021</div>
+            <div>
+              <div class="title">A Novel Framework for Blockchain Based Driving License Management and Driver's Reputation System for Bangladesh</div>
+              <div class="authors"><b>M. M. H. U. Mazumder</b>, T. Islam, M. R. Alam, M. E. Al Haque, M. S. Islam, M. M. Alam</div>
+              <div class="where">IEEE International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST), 2021</div>
+              <div class="actions"><a href="https://ieeexplore.ieee.org/abstract/document/9331189">Paper</a></div>
+            </div>
+          </li>
+        </ul>
+        <p class="note"><sup>*</sup> Authors listed alphabetically, as is customary in theoretical computer science. Full list on <a href="https://scholar.google.com/citations?user=7TyzUBQAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+      </section>
+
+      <section id="software">
+        <h2>Datasets &amp; Code</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>oran-deep-scheduler</h3>
+            <p>5G RAN simulator and deep-RL testbed (Python, PyTorch, NVIDIA Sionna) for multi-cell MU-MIMO scheduling, with traffic, mobility, handover, and robustness stress tests.</p>
+            <div class="meta"><a href="https://github.com/mhrafi66/oran-deep-scheduler">GitHub</a></div>
+          </div>
+          <div class="card">
+            <h3>Augmented Outdoor RSS Dataset</h3>
+            <p>Physics-informed augmentation of POWDER outdoor RSS measurements for single- and two-transmitter localization. 100+ downloads since its April 2026 release.</p>
+            <div class="meta"><a href="https://doi.org/10.5281/zenodo.19445683">Zenodo</a></div>
+          </div>
+          <div class="card">
+            <h3>BdSL47</h3>
+            <p>47,000 images of 47 Bangla sign alphabets and digits with depth-based hand keypoints. 4,000+ downloads and used by independent groups to build new recognition models.</p>
+            <div class="meta"><a href="https://doi.org/10.17632/pbb3w3f92y.3">Mendeley Data</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="tl-head"><strong>Graduate Research Assistant</strong><span>Aug 2023 – Present</span></div>
+            <div class="tl-org">Kahlert School of Computing, University of Utah</div>
+            <p>Spectrum sharing, Open RAN scheduling, and transmitter localization on NSF-funded projects (POWDER-ENS, POWDER-RDZ), working with Profs. Aditya Bhaskara, Jacobus Van der Merwe, Sneha Kumar Kasera, Neal Patwari, and Blair D. Sullivan.</p>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Teaching Assistant, Research Experiences for Undergraduates</strong><span>May 2024 – Aug 2024</span></div>
+            <div class="tl-org">University of Utah</div>
+            <p>Delivered machine-learning lectures and supervised undergraduate research projects.</p>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Lecturer</strong><span>Jul 2021 – Jul 2023</span></div>
+            <div class="tl-org">Dept. of Computer Science and Engineering, United International University, Dhaka</div>
+            <p>Taught Artificial Intelligence, Data Structures and Algorithms, Discrete Mathematics, Digital System Design, Structured Programming, and Object-Oriented Programming; supervised undergraduate projects.</p>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Project Coordinator and Lead, BdSL47</strong><span>May 2022 – Jul 2023</span></div>
+            <div class="tl-org">Institute for Advanced Research, United International University</div>
+            <p>Conceived the project, wrote the funded grant proposal, designed the data-collection module, and led a team from UIU and IUT to build the BdSL47 dataset.</p>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Research Assistant, Network Intrusion Detection</strong><span>Nov 2020 – Dec 2022</span></div>
+            <div class="tl-org">ICT Division-funded research project, Dhaka, Bangladesh</div>
+            <p>Developed feature extraction and reduction methods for intrusion detection (cFEM, RHC) and an evidential nearest-neighbor method for imbalanced learning.</p>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Research Intern</strong><span>Nov 2019 – Jan 2020</span></div>
+            <div class="tl-org">Samsung R&amp;D Institute Bangladesh</div>
+            <p>Built a deep-learning proof of concept for S-Pen handwriting input without a touch-sensitive surface, supporting a patent effort.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="service">
+        <h2>Service &amp; Education</h2>
+        <div class="two">
+          <div class="card">
+            <h3>Academic service</h3>
+            <ul class="plain">
+              <li>Shadow PC Member, ACM SIGMETRICS 2026</li>
+              <li>External Reviewer, ACM-SIAM SODA 2026</li>
             </ul>
-        </div>
-        <div>
-            <h3>BSc in Computer Science and Engineering</h3>
-            <p>Islamic University of Technology (Jan 2017 - Feb 2021)</p>
-            <ul>
-                <li>Thesis: cFEM: A Cluster based Feature Extraction Method for Network Intrusion Detection</li>
-                <li>Relevant Coursework: Machine Learning, Pattern Recognition, Artificial Intelligence, Computer Security and Cryptography,
-                    Human Computer Interaction, Digital Image Processing, Linear Algebra, Probability and Statistics, Data
-                    Structure and Algorithm, Graph Theory, Operating System, etc.</li>
+          </div>
+          <div class="card">
+            <h3>Education</h3>
+            <ul class="plain">
+              <li><strong>Ph.D., Computer Science</strong>, University of Utah (2023 – present)</li>
+              <li><strong>M.S., Computer Science</strong>, University of Utah (2026)</li>
+              <li><strong>B.Sc., Computer Science and Engineering</strong>, Islamic University of Technology (2021)</li>
             </ul>
+          </div>
         </div>
-    </section>
+      </section>
+    </main>
+  </div>
 
-    <section id="publications">
-        <h2>Research Publications</h2>
-
-        <div class="publication">
-            <b>Optimizing Probabilistic Propagation in Graphs by Adding Edges</b><br>
-            ACM-SIAM Symposium on Discrete Algorithms (SODA), [Under Review].<br>
-            Authors: A. Bhaskara, A. Crane, S. Jain, <b>M. M. H. U. Mazumder</b>, B. D. Sullivan, P. Yalamanchili.<br>
-            <a href="https://arxiv.org/pdf/2407.02624">[PDF]</a>
-        </div>
-        <div class="publication">
-            <b>Bridging Data Gaps: Enhancing Wireless Localization with Physics-Informed Data Augmentation</b><br>
-            ACM International Conference on Emerging Networking Experiments and Technologies (ACM CoNEXT, 2025), [Accepted For Publication].<br>
-            Authors: <b>M. M. H. U. Mazumder</b>, F. B. Mitchell, A. Bhaskara, S. K. Kasera and N. Patwari, DOI: 10.1145/3768995.<br>
-            <a href="https://drive.google.com/file/d/1lw9uc-YGFi6kIm7XWBDfSIx0GgVnENpS/view?usp=sharing">[PDF]</a>
-        </div>
-
-        <div class="publication">
-            <b>An Evidential Dynamic Neighborhood Approach to Learn from Imbalanced Data</b><br>
-            IEEE Transactions on Knowledge and Data Engineering (TKDE), [Under Review].<br>
-            Authors: M.E. Kadir, <b>M. M. H. U. Mazumder</b>, M. M. Alam, M. Shoyaib.<br>
-            <a href="https://drive.google.com/file/d/1NVmLMgSDogK_kkn-4UmhvHl0rtFP_R8i/view?usp=sharing">[PDF]</a>
-        </div>
-
-        <div class="publication">
-            <b>cFEM: A Cluster based Feature Extraction Method for Network Intrusion Detection</b><br>
-            International Journal of Information Security [Springer].<br>
-            Authors: <b>M. M. H. U. Mazumder</b>, M.E. Kadir, S. Sharmin, M. S. Islam, M. Shoyaib, M. M. Alam.<br>
-            <a href="https://link.springer.com/article/10.1007/s10207-023-00694-y">[Link]</a>
-        </div>
-
-        <div class="publication">
-            <b>RHC: Cluster based Feature Reduction for Network Intrusion Detection</b><br>
-            IEEE 19th Annual Consumer Communications & Networking Conference (CCNC), 2022.<br>
-            Authors: M. H. Tarek, <b>M. M. H. U. Mazumder</b>, S. Sharmin, M. S. Islam, M. Shoyaib, M. M. Alam.<br>
-            <a href="https://ieeexplore.ieee.org/abstract/document/9700680">[Link]</a>
-        </div>
-
-        <div class="publication">
-            <b>A Novel Framework for Blockchain Based Driving License Management and Driver’s Reputation System for Bangladesh</b><br>
-            2nd International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST), 2021.<br>
-            Authors: <b>M. M. H. U. Mazumder</b>, T. Islam, M. R. Alam, M. E. Al Haque, M. S. Islam, M. M. Alam.<br>
-            <a href="https://ieeexplore.ieee.org/abstract/document/9331189">[Link]</a>
-        </div>
-
-        <div class="publication">
-            <b>BdSL47: A Complete Open-access Depth-based Bangla Sign Alphabet and Digit Dataset</b><br>
-            Data in Brief.<br>
-            Authors: S M Rayeed, S. T. Tuba, H. Mahmud, <b>M. M. H. U. Mazumder</b>, M.S.H. Mukta, M.K. Hasan.<br>
-            <a href="https://www.sciencedirect.com/science/article/pii/S2352340923008612">[Link]</a>
-        </div>
-
-    </section>
-
-        <section id="research">
-        <h2>Research Experience</h2>
-
-        <div class="research">
-            <h3>Fairness in Network Graphs</h3>
-            <p>Graduate Research Assistant (Aug 2023 - Present)</p>
-            <ul>
-                <li>Principal Investigators: Prof. Aditya Bhaskara, Prof. Blair D. Sullivan</li>
-                <li>Research Goal: Optimizing information access in a network graph via Edge Addition. The project also focuses on studying fairness in graphs.</li>
-            </ul>
-        </div>
-
-        <div class="research">
-            <h3>POWDER-ENS: Enhancing and Sustaining the POWDER Platform</h3>
-            <p>Graduate Research Assistant (May 2024 - Present)</p>
-            <ul>
-                <li>Principal Investigators: Prof. Jacobus (Kobus) Van der Merwe, Prof. Aditya Bhaskara, Prof. Eric Eide, Prof. Anna Fariha</li>
-                <li>Research Goal: This project encompasses different wireless network research directions. Our team works on using machine learning and data optimization techniques for localization of a device using signal strengths from sensors.</li>
-            </ul>
-        </div>
-
-        <div class="research">
-            <h3>Optimization of kNN for Imbalanced Data</h3>
-            <p>Research Assistant (Mar 2022 - Dec 2022)</p>
-            <ul>
-                <li>Principal Investigators: Prof. Mohammad Shoyaib, Prof. Muhammad Mahbub Alam</li>
-                <li>Research Outcome: Developed a method called Proximity weighted Evidential Dynamic Neighbor (PwEDN) to address the class imbalance problem in Nearest Neighbor (kNN) algorithms; manuscript under second stage of review in IEEE Transactions on Knowledge and Data Engineering.</li>
-            </ul>
-        </div>
-
-        <div class="research">
-            <h3>Intrusion Detection System (IDS) Research Project (ICT Division, Ministry of Posts, Telecommunications and Information Technology, Bangladesh)</h3>
-            <p>Undergraduate Research Assistant (Nov 2020 - Jan 2022)</p>
-            <ul>
-                <li>Principal Investigators: Sadia Sharmin, Prof. Md. Shariful Islam, Prof. Muhammad Mahbub Alam</li>
-                <li>Research Goal: Proposed several methods including cFEM and RHC for Network Intrusion Detection using Machine Learning.</li>
-            </ul>
-        </div>
-
-        <div class="research">
-            <h3>Bangla Sign Language dataset Project (Institute of Advanced Research,UIU) </h3>
-            <p>Project Co-ordinator (May 2022 - Jul 2023)</p>
-            <ul>
-                <li>Project Outcome: we have built the first sign alphabet dataset in Bangla Sign Language (BdSL47) using depth information containing 47000 samples of one-handed static hand gestures of a total of 47 signs (37 alphabets and ten digits). The work has been published in Data in Brief</li>
-            </ul>
-        </div>
-    </section>
-
-
-    <section id="work">
-        <h2>Work Experience</h2>
-
-        <div class="work">
-            <h3>Machine Learning Instructor</h3>
-            <p>Research Experiences for Undergrads (REU), Kahlert School of Computing, University of Utah (May 2024 - Aug 2024)</p>
-            <ul>
-                <li>Delivered ML lectures to undergraduate students in the Summer internship program.</li>
-                <li>Supervised students' assigned internship projects.</li>
-            </ul>
-        </div>
-
-        <div class="work">
-            <h3>Lecturer</h3>
-            <p>United International University (Jul 2021 - Jul 2023)</p>
-            <ul>
-                <li>Courses Conducted: Artificial Intelligence, Data Structure and Algorithms, Digital System Design, Discrete Mathematics, Structured Programming Language, Object Oriented Programming Language.</li>
-                <li>Advised students on academic matters and conducted demand-driven research for teaching.</li>
-                <li>Provided consultative support to students in their academic and learning activities.</li>
-                <li>Carried out monitoring, assessment, and evaluation of examination work.</li>
-                <li>Provided academic input on existing and new courses and course development.</li>
-            </ul>
-        </div>
-
-        <div class="work">
-            <h3>Research Intern</h3>
-            <p>Samsung R&D Institute Bangladesh (Nov 2019 - Jan 2020)</p>
-            <ul>
-                <li>Developed Proof of Concept (PoC) for Samsung Pen patents on writing without data collection from the touch-sensitive surface.</li>
-                <li>Engaged in data collection, framework building, and experimented with different deep learning frameworks for data classification.</li>
-                <li>Participated in writing patent papers and funding applications.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:mumtahin.mazumder@utah.edu">mumtahin.mazumder@utah.edu</a>, <a href="mailto:mumtahinhabib0213@gmail.com">mumtahinhabib0213@gmail.com</a></p>
-        <p>University of Utah, Kahlert School of Computing</p>
-        <p>Google Scholar: <a href="https://scholar.google.com/citations?hl=en&user=7TyzUBQAAAAJ">Visit Profile</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/md-mumtahin-habib-ullah-mazumder-80b07315a/">Visit Profile</a></p>
-        <p>ResearchGate: <a href="https://www.researchgate.net/profile/Md-Mumtahin-Habib-Ullah-Mazumder">Visit Profile</a></p>
-        <p>GitHub: <a href="https://github.com/mhrafi66">Visit Profile</a></p>
-        <p><a href="https://drive.google.com/file/d/1RI1qcVbYUbQdre6Z2Ya8sBgj5jS1zh8k/view?usp=sharing">Get My CV</a></p>
-    </section>
-
-    <footer>
-        &copy; 2025 Md. Mumtahin Habib Ullah Mazumder
-    </footer>
-    
+  <footer>
+    © <span id="yr">2026</span> Md Mumtahin Habib Ullah Mazumder · Last updated November 2026
+  </footer>
+  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
